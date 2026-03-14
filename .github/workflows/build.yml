@@ -21,7 +21,7 @@ jobs:
           java-version: '17'
 
       - name: Install Flet
-        run: pip install flet
+        run: pip install flet==0.25.2
 
       - name: Rakit APK
         run: flet build apk
