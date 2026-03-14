@@ -24,8 +24,11 @@ jobs:
         run: pip install flet==0.25.2
 
       - name: Rakit APK
-        run: flet build apk
-
+        run: |
+          # Perintah sakti buat nerima semua lisensi Android otomatis
+          yes | sdkmanager --licenses || true
+          flet build apk
+          
       - name: Upload Hasil APK
         uses: actions/upload-artifact@v4
         with:
